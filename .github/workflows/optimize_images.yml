@@ -1,0 +1,15 @@
+name: Optimize images
+on:
+  push:
+    branches:
+      - main
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run image optimization
+        uses: calibreapp/image-actions@v3
+        with:
+          quality: 80
